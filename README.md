@@ -9,5 +9,6 @@ After the prompt, you will get this
 main directory containing four directories: app(reminder.sh), assets(submissions.txt), config(config.env), models(functions), and one startup file
 
  After this, you can run copilot_shell_script.sh to see the reminder for the non-submitted assignment.
-** The purpose of the repository**
+
+ The purpose of the repository
  The purpose is to create scripts to remind students to submit their work.
