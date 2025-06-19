@@ -1,0 +1,27 @@
+#!/bin/bash
+# Path to the submission file
+submissions_file="assets/submission.txt"
+# Allowed assignment names
+Assignment=("Shell Navigation" "Git" "Shell Basics")
+
+read -p "Enter the assignment: " input
+
+valid=false
+for prompt in "${Assignment[@]}"; do
+    if [[ "$input" == "$prompt" ]]; then
+        valid=true
+        # Update the ASSIGNMENT value in config.env
+        sed -i "s/^ASSIGNMENT=.*/ASSIGNMENT=$input/" "/config/config.env"
+
+        break
+    fi
+done
+
+if ! $valid; then
+    echo "Invalid input. Only these values are allowed; ${Assignment[*]}"
+    exit 1
+fi
+
+# Run the startup script
+./startup.sh
+
